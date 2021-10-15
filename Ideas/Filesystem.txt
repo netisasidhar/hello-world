@@ -9,3 +9,6 @@ A file begins in this filesystem by one pointer cluster having 8-byte-pointers t
 If  the layer is of pointer clusters, each of those has pointers to the next layer of clusters -by now I think you know what I mean by a layer-
 going like this, finally we reach the data layer, now, which layer is the data layer- that the directory stores(it stores the number of the layer having data).
 The directory itself is a thing just like a file. with the exception- the data clusters only store file pointers and their names and the layer number of data layer.
+Now, another bit of the idea is that we can not only have this as a layered structure, but also as a thing like- each pointer cluster has pointers to just data clusters 
+with the last pointer being to another pointer cluster. And then we have a "freefile" where all unused clusters in the middle of being-used clusters are linked to 
+increase speed of finding a free cluster.
