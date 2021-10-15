@@ -1,0 +1,11 @@
+Well, I wanted to keep this file public, as, I wanted the world to know that I had this Idea. If someone had this idea already, please let me know and forgive me.
+Now, to the idea-
+it is of a filesystem that has two distinct kinds of clusters-
+-pointer cluseters
+-data clusters.
+Pointer clusters only store pointers to other clusters (pointer or data) while data clusters only store data.
+For simplicity, lets say that one cluster is just a 512 byte sector(for now).
+A file begins in this filesystem by one pointer cluster having 8-byte-pointers to 64 clusters - the second layer.
+If  the layer is of pointer clusters, each of those has pointers to the next layer of clusters -by now I think you know what I mean by a layer-
+going like this, finally we reach the data layer, now, which layer is the data layer- that the directory stores(it stores the number of the layer having data).
+The directory itself is a thing just like a file. with the exception- the data clusters only store file pointers and their names and the layer number of data layer.
