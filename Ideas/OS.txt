@@ -1,0 +1,19 @@
+I do not know most existing operating systems but I want to build my own self contained operating system to cater my specific needs using my old desktop.
+
+Some core ideas of my OS
+1) No files. Only objects. OS fetches them from disk and you can use them. Apps cannot access the mechanism which the OS uses to maintain these.
+2) The OS by itself is uninteractive, and is precompiled- you can change this using appropriate apps.
+3) Each app loads the next at boot time.
+4) It is possible that I use my filesystem for this OS- not as a FILESYSTEM but as the thing which manages public objects on disk.
+
+I know things like CosmOS exist; but I want this to make things light and to have control at the level of the boot sector.
+
+A thing that I found useful- How to load your first "Hello world.bin" file to an actual computer?
+Most people will suggest a proceure involving ISO files, andgoing forward, this might be the only solution, but for now, what I did is-
+1) Go get Tiny-Core linux(if I spelled it right)'s ISO file.
+2) Burn it on a CD-R
+3) Get the .bin file containing my operating system as it would exist on the hard disk of the target computer in a pen drive(usb stick).
+4) Boot the CD and plug in the pen drive.
+5) Use- dd if=/mnt/sdb1/myos.bin of=/dev/sda bs=512
+sdb1 is the pendrive; myos.bin is my OS;sda is the hard disk where I want my OS to be.
+6) Reboot after removing the CD.
